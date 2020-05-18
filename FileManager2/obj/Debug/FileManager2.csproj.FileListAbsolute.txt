@@ -1,0 +1,7 @@
+C:\Users\alaia\Documents\Visual Studio 2008\Projects\FileManager2\FileManager2\bin\Debug\FileManager2.dll
+C:\Users\alaia\Documents\Visual Studio 2008\Projects\FileManager2\FileManager2\bin\Debug\FileManager2.pdb
+C:\Users\alaia\Documents\Visual Studio 2008\Projects\FileManager2\FileManager2\bin\Debug\SimplSharpCustomAttributesInterface.dll
+C:\Users\alaia\Documents\Visual Studio 2008\Projects\FileManager2\FileManager2\bin\Debug\SimplSharpHelperInterface.dll
+C:\Users\alaia\Documents\Visual Studio 2008\Projects\FileManager2\FileManager2\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\alaia\Documents\Visual Studio 2008\Projects\FileManager2\FileManager2\obj\Debug\FileManager2.dll
+C:\Users\alaia\Documents\Visual Studio 2008\Projects\FileManager2\FileManager2\obj\Debug\FileManager2.pdb

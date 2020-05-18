@@ -1,0 +1,45 @@
+//#INCLUDEPATH "pathTobinDebugFolder"
+#USER_SIMPLSHARP_LIBRARY "FileManager2"
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+#ENCODING_ASCII
+
+#HELP_BEGIN
+FileLoc should be populated with the full file path and the extention
+extention must be a .txt file. 
+default = \\User\\NamesFile.txt
+#HELP_END
+//#ENCODING_UTF16
+#DEFINE_CONSTANT MaxNames 10
+
+digital_input _skip_, fileInitialize, _skip_, SaveName[MaxNames,MaxNames];
+string_input _skip_, FileLoc[100], _skip_, Name[MaxNames,MaxNames][100];
+string_output _skip_, _skip_, _skip_, _skip_, _skip_, _skip_, _skip_, _skip_, _skip_, _skip_, _skip_, _skip_, _skip_, _skip_, _skip_, _skip_, NameFb[MaxNames,MaxNames];
+
+FileManagement FM;
+
+push fileInitialize {
+    if(len(FileLoc) > 0)
+        FM.Initialize(FileLoc);
+    else
+        FM.Initialize("\\User\\NamesFile.txt");
+}
+
+push SaveName {
+    integer iTemp;
+
+    iTemp = GetLastModifiedArrayIndex();
+
+    FM.saveNameToFile(iTemp,Name[iTemp]);
+}
+
+callback function spReportNames(string name, integer index) {
+    makestring(NameFb[index],"%s",Left(name,Len(name) - 1));
+}
+
+function main()
+{
+    WaitForInitializationComplete();
+    registerdelegate (FM, ReportNames, spReportNames);
+}
